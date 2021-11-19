@@ -81,7 +81,7 @@ const Minter = (props) => {
       </div>
       {"Contract address: "} <p>{contractAddress}</p>
 
-      <h1 id="title">🧙‍♂️ TheLeadingCrew NFT Minter</h1>
+      <h1 id="title">No wizard. TheLeadingCrew NFT Minter</h1>
       <p>
 	  	Enter the amount of token you wish to mint, then press "Mint."
       </p>
