@@ -1,7 +1,7 @@
 require("dotenv").config();
 const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
 const contractABI = require("./contract-abi.json");
-const contractAddress = "0x6CEe1ba244D289fF38BE1dF75727936eFb51c173";
+const contractAddress = process.env.CONTRACT_ADDRESS;
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const web3 = createAlchemyWeb3(alchemyKey);
 
@@ -86,14 +86,6 @@ export const getCurrentWalletConnected = async () => {
 async function loadContract() {
   return new web3.eth.Contract(contractABI, contractAddress);
 }
-
-// export const mintNFT = async (url, name, description) => {
-//   if (url.trim() == "" || name.trim() == "" || description.trim() == "") {
-//     return {
-//       success: false,
-//       status: "❗Please make sure all fields are completed before minting.",
-//     };
-//   }
 
 export const publicMint = async (mintAmount) => {
 	if (mintAmount.trim() == "") {

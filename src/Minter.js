@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import {
-  connectWallet,
-  getCurrentWalletConnected,
-  createCollectible,
+	connectWallet,
+	getCurrentWalletConnected,
+	publicMint,
 } from "./interact.js";
+
+require("dotenv").config();
+const contractAddress = process.env.CONTRACT_ADDRESS;
 
 const Minter = (props) => {
   const [walletAddress, setWallet] = useState("");
@@ -73,9 +76,11 @@ const Minter = (props) => {
       </button>
 
       <br></br>
-	  <p>
-        Contract address: {contractAddress}
-      </p>
+      <div className="app">
+        {"Contract address: "}  + <p>{process.env.CONTRACT_ADDRESS}</p>
+      </div>
+      {"Contract address: "} <p>{contractAddress}</p>
+
       <h1 id="title">🧙‍♂️ TheLeadingCrew NFT Minter</h1>
       <p>
 	  	Enter the amount of token you wish to mint, then press "Mint."
