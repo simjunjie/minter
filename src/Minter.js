@@ -81,20 +81,17 @@ const Minter = (props) => {
       </div>
       {"Contract address: "} <p>{contractAddress}</p>
 
-      <h1 id="title">No wizard. TheLeadingCrew NFT Minter</h1>
-      <p>
-	  	Enter the amount of token you wish to mint, then press "Mint."
-      </p>
+      <h1 id="title">The Leading Crew NFT Minter</h1>
+      <p>Enter the amount of NFTs you wish to mint and press "Mint"</p>
       <form>
-        <h2>Mint Amount: </h2>
         <input
           type="text"
-          placeholder="1 to 3 (for test deployment, change to +/- box)"
+          placeholder="Quantity: (1 to 6 max)"
           onChange={(event) => setMintAmount(event.target.value)}
         />
       </form>
       <button id="mintButton" onClick={onMintPressed}>
-        Mint NFT
+        Mint
       </button>
       <p id="status" style={{ color: "red" }}>
         {status}
